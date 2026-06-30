@@ -10,13 +10,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #0F1117;
-  --surface:   #1A1D27;
+  --bg:        #eaeeec;
+  --surface:   #d9e5de;
   --accent:    #6C63FF;
   --accent-dim:#3D3880;
-  --text:      #EAEAEA;
+  --text:      #000201;
   --muted:     #7A7F9A;
-  --border:    #252836;
+  --border:    #25283600;
   --radius:    12px;
 }
 
@@ -32,7 +32,7 @@ body {
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; width: 100%; z-index: 100;
-  background: rgba(15,17,23,0.85);
+  background: #f7fbf9;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   display: flex; justify-content: space-between; align-items: center;
@@ -52,6 +52,7 @@ nav {
 }
 .nav-links a:hover { color: var(--text); }
 
+
 /* ── HERO ── */
 #hero {
   min-height: 100vh;
@@ -66,7 +67,7 @@ nav {
   text-transform: uppercase; margin-bottom: 1rem;
 }
 .hero-name {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family:'Times New Roman', Times, serif;
   font-size: clamp(2.8rem, 6vw, 5rem);
   font-weight: 700; line-height: 1.05;
   margin-bottom: 0.4rem;
@@ -90,13 +91,13 @@ nav {
 }
 .hero-title {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
-  color: var(--muted); margin: 1.2rem 0 2rem;
+  color: #46ac43; margin: 1.2rem 0 2rem;
   font-weight: 300;
 }
 .hero-cta {
   display: inline-block;
   padding: 0.75rem 2rem;
-  background: var(--accent); color: #fff;
+  background: #007048; color: #fff;
   text-decoration: none; border-radius: 6px;
   font-weight: 600; font-size: 0.95rem;
   transition: opacity 0.2s, transform 0.2s;
@@ -106,8 +107,32 @@ nav {
   position: absolute; right: -10%; top: 50%;
   transform: translateY(-50%);
   width: 520px; height: 520px;
-  background: radial-gradient(circle, rgba(108,99,255,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, #007048 0%, transparent 70%);
   border-radius: 50%; pointer-events: none;
+}
+
+/* ── HERO IMAGE ── */
+.hero-img {
+  position: absolute;      /* takes it out of flow so it doesn't push text */
+  right: 6%;               /* matches your section padding */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 380px;
+  height: 380px;
+  border-radius: 12%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 40px rgba(108,99,255,0.25);
+  z-index: 2;
+}
+
+/* Make space so text doesn't go under the image on desktop */
+#hero { padding-right: 38%; }
+
+/* Mobile: hide or stack it */
+@media (max-width: 980px) {
+  .hero-img { display: none; }   /* hide on tablet/phone. Or remove this to show it centered */
+  #hero { padding-right: 6%; }   /* remove the extra space on mobile */
 }
 
 /* ── SECTIONS ── */
@@ -289,7 +314,7 @@ section { padding: 6rem 6%; }
 .contact-btn.primary { background: var(--accent); color: #fff; }
 .contact-btn.secondary {
   border: 1px solid var(--border);
-  color: var(--text); background: var(--surface);
+  color: #fff; background:#009964;
 }
 
 /* ── FOOTER ── */
@@ -333,10 +358,13 @@ footer {
   <section id="hero">
     <div class="hero-content">
       <p class="hero-eyebrow">Welcome to my portfolio</p>
-      <h1 class="hero-name"><span>Ukachukwu Destiny</span></h1>
+      <h1 class="hero-name">Ukachukwu Destiny</h1>
       <p class="hero-title">Technical Support Specialist · Frontend Developer · Creator</p>
       <a href="#projects" class="hero-cta">View My Work</a>
     </div>
+
+    <img src="images/me.png" alt="Ukachukwu Destiny" class="hero-img">
+
     <div class="hero-bg-circle"></div>
   </section>
 
@@ -505,7 +533,7 @@ footer {
     <div class="projects-grid">
       <div class="project-card">
         <div class="project-thumb">
-          <img src="#" alt="Drexhub Ecommerce Website">
+          <img src="images/drexhubecommerce.png" alt="Drexhub Ecommerce Website" height="100%" width="100%">
         </div>
         <div class="project-body">
           <h3>DrexHub Business Portfolio</h3>
@@ -518,7 +546,7 @@ footer {
       </div>
       <div class="project-card">
         <div class="project-thumb">
-          <img src="" alt="Drexhub Business Website">
+          <img src="images/drexhubportfolio.png" alt="Drexhub Business Website" height="100%" width="100%">
         </div>
         <div class="project-body">
           <h3>DrexHub Ecommerce Website</h3>
