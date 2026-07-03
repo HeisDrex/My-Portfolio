@@ -206,18 +206,21 @@
   <p class="section-label">Design Work</p>
   <h2 class="section-title">Graphics</h2>
   <div class="carousel">
-    <button class="carousel-btn prev">&#8592;</button>
     <div class="carousel-track">
-      <img src="images/Drexads.png" alt="Design 1">
-      <img src="images/ella.jpg" alt="Design 2">
-      <img src="images/Fantasy Ads.png" alt="Design 3">
-      <img src="images/xmas sales.png" alt="Design 4">
-      <img src="images/DrexHub July.png" alt="Design 5">
-      <img src="images/Untitled-1.png" alt="Design 6">
-      <img src="images/THANKS.jpg" alt="Design 7">
-      <img src="images/work.jpg" alt="Design 8">
+      <img src="images/ella.jpg" alt="Design 1">
+      <img src="images/xmas sales.png" alt="Design 2">
+      <img src="images/Untitled-1.png" alt="Design 3">
+      <img src="images/THANKS.jpg" alt="Design 4">
+      <img src="images/work.jpg" alt="Design 5">
+
+      <!-- loop -->
+
+      <img src="images/ella.jpg" alt="Design 1">
+      <img src="images/xmas sales.png" alt="Design 2">
+      <img src="images/Untitled-1.png" alt="Design 3">
+      <img src="images/THANKS.jpg" alt="Design 4">
+      <img src="images/work.jpg" alt="Design 5">
     </div>
-    <button class="carousel-btn next">&#8594;</button>
   </div>
 </section>
 
@@ -298,15 +301,6 @@
   });
 }, {threshold: 0.1});
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-const track = document.querySelector('.carousel-track');
-document.querySelector('.next').addEventListener('click', () => {
-  track.scrollBy({left: 320, behavior: "smooth"});
-});
-document.querySelector('.prev').addEventListener('click', () => {
-  track.scrollBy({left: -320, behavior: "smooth"});
-});
-
 </script>
 </body>
 </html>
