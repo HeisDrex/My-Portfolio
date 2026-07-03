@@ -63,10 +63,10 @@ nav {
 }
 .hero-content { max-width: 700px; }
 .hero-eyebrow {
-  font-size: 0.85rem; letter-spacing: 0.18em;
-  color: var(--accent); font-weight: 500;
-  text-transform: uppercase; margin-bottom: 1rem;
+  font-size: 15px; letter-spacing: 0.18em;
+  color: var(--accent); font-weight: 500; margin-bottom: 1rem;
 }
+
 .hero-name {
   font-family:'Times New Roman', Times, serif;
   font-size: clamp(2.8rem, 6vw, 5rem);
@@ -99,7 +99,7 @@ nav {
   display: inline-block;
   padding: 0.75rem 2rem;
   background: #007048; color: #fff;
-  text-decoration: none; border-radius: 6px;
+  text-decoration: none; border-radius: 100px;
   font-weight: 600; font-size: 0.95rem;
   transition: opacity 0.2s, transform 0.2s;
 }
@@ -206,23 +206,20 @@ section { padding: 6rem 6%; }
 
 /* Cert pills */
 .cert-grid {
-  display: flex; flex-wrap: wrap; gap: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
 }
 .cert-pill {
-  background: var(--surface);
+ background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 0.45rem 1.1rem;
-  font-size: 0.85rem; color: var(--text);
-  display: flex; align-items: center; gap: 0.5rem;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  position: relative;
   transition: border-color 0.2s;
 }
 .cert-pill:hover { border-color: var(--accent); }
-.cert-dot {
-  width: 7px; height: 7px;
-  background: var(--accent); border-radius: 50%;
-  flex-shrink: 0;
-}
+
 
 /* ── SKILLS ── */
 .skills-grid {
